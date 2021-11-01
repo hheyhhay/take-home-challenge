@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import { fetchArticles } from '../../util/apiCall'
 import { Route } from 'react-router-dom'
-// src/util/apiCall.js
 import './App.css';
 import Home from '../Home/Home'
 
@@ -34,7 +33,7 @@ const App = () => {
         </Route>
 
     </div>
-  );
+  )
 }
 
 export default App;
