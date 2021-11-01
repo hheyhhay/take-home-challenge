@@ -25,7 +25,7 @@ const Home = ({articles})  => {
       <h1 className='title'>{article.title}</h1>
       <h2 className='abstract'>{article.abstract}</h2>
       <p className='author'>{article.byline}</p>
-      <img src={article.multimedia[0].url} />
+      <img className='article-image' src={article.multimedia[0].url} />
       <a className='image-caption'>{article.multimedia[0].caption}</a>
     </div>
     )

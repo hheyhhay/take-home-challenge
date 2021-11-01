@@ -1,0 +1,22 @@
+.article-card {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.title {
+  font-size: 18px;
+}
+
+.abstract {
+  font-size: 12px;
+}
+.article-image {
+  width: 200px;
+  height: 200px;
+}
+
+.image-caption {
+  font-size: 10px;
+}
