@@ -4,6 +4,7 @@ import { fetchArticles } from '../../util/apiCall'
 import { Route } from 'react-router-dom'
 // src/util/apiCall.js
 import './App.css';
+import Home from '../Home/Home'
 
 const App = () => {
   const [articles, setArticles] = useState([])
@@ -26,6 +27,11 @@ const App = () => {
 
   return (
     <div className="App">
+      <Route exact path='/'>
+        <Home
+          articles={articles}
+          />
+        </Route>
 
     </div>
   );
