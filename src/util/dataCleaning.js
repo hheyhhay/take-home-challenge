@@ -3,7 +3,7 @@ export const dataCleaning = (data) => {
   let dataArray = data.results.map(article => {
     let simplifiedData = {};
 
-    simplifiedData.id = Date.now();
+    simplifiedData.id = Math.floor(new Date().valueOf() * Math.random());
     simplifiedData.author = article.byline;
     simplifiedData.images = article.multimedia;
     simplifiedData.publishedDate = article.published_date;
