@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Home.css';
 import { Route, Link } from 'react-router-dom'
 
-const Home = ({ articles })  => {
+const Home = ({ articles, handleChange })  => {
 
   //Function for if I want to show all images, currently showing only first
   const images = (imagesArray) => {
@@ -16,10 +16,8 @@ const Home = ({ articles })  => {
       })
     return imageCards
   }
-  console.log(articles)
-  const articleCards = articles.map(article => {
 
-    console.log(article)
+  const articleCards = articles.map(article => {
     return (
       <div className='article-card' id={article.id}>
         <h1 className='title'>{article.title}</h1>
@@ -28,7 +26,7 @@ const Home = ({ articles })  => {
         <img className='article-image' src={article.images[0].url} />
         <a className='image-caption'>{article.images[0].caption}</a>
         <Link key={article.id} to={`/${article.id}`}>
-          <button>See Details</button>
+          <button onClick={(e) => handleChange(article.id)}>See Details</button>
         </Link>
       </div>
     )
