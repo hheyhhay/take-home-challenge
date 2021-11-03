@@ -12,5 +12,6 @@ export const dataCleaning = (data) => {
     simplifiedData.abstract = article.abstract;
     return simplifiedData
   })
-return dataArray;
+
+  return dataArray;
 }

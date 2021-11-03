@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Home.css';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom';
 
 const Home = ({ articles, handleChange })  => {
 
@@ -36,7 +36,6 @@ const Home = ({ articles, handleChange })  => {
     <div>
       <div>Home</div>
       <div className='article-cards'>{articleCards}</div>
-
     </div>
   )
 }

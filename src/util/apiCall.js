@@ -7,6 +7,3 @@ export const fetchArticles = () => {
       .catch(err => console.log(err))
 
 }
-
-
-// talk about the challenges, and why things are built a certain way.

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Details.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Details = ({ selectedID, articles, handleChange }) => {
 
