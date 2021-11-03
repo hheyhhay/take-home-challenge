@@ -9,7 +9,11 @@ import Details from '../Details/Details'
 
 const App = () => {
   const [articles, setArticles] = useState([])
+  const [selectedID, setSelectedID] = useState('')
   const [error, setError] = useState('')
+
+
+
 
   const getData = async () => {
     try {
@@ -27,6 +31,14 @@ const App = () => {
     getData()
   }, [])
 
+
+  const handleChange = (id) => {
+    console.log(id)
+    console.log('hi')
+    // setSelectedID(id)
+    selectedID ? setSelectedID('') : setSelectedID(id)
+    console.log(selectedID)
+  }
   // const articleCards = articles.map(article => {
   //   return (
   //     <div className='article-card'>
@@ -46,12 +58,15 @@ const App = () => {
       <Route exact path='/'>
         <Home
           articles={articles}
+          handleChange={ handleChange }
           />
       </Route>
       <Route exact path='/:id' render={ ({ match }) => {
         const selectedID = match.params.id;
         return <Details
           selectedID={ selectedID }
+          articles={ articles }
+          handleChange={ handleChange }
           />
       }}
       />
