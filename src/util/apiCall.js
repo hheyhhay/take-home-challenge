@@ -1,12 +1,12 @@
-//key: kByTgbwq8DyLWVG5IJOhgM2ZCCLT0qVt
-export const fetchArticles = async () => {
-  let response = await fetch("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=kByTgbwq8DyLWVG5IJOhgM2ZCCLT0qVt")
 
-  if (!response.ok) {
-    throw new Error('Error - articles not find. Please try again later')
-  }
+export const fetchArticles = () => {
+  const key = "kByTgbwq8DyLWVG5IJOhgM2ZCCLT0qVt"
 
-  let articles = await response.json()
+  return fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`)
+      .then(res => res.json())
+      .catch(err => console.log(err))
 
-  return articles;
 }
+
+
+// talk about the challenges, and why things are built a certain way.
