@@ -1,9 +1,11 @@
 // import logo from './logo.svg'
 import React, { useState, useEffect } from 'react'
 import { fetchArticles } from '../../util/apiCall'
-import { Route } from 'react-router-dom'
+import { dataCleaning } from '../../util/dataCleaning'
+import { Route, Link } from 'react-router-dom'
 import './App.css';
 import Home from '../Home/Home'
+import Details from '../Details/Details'
 
 const App = () => {
   const [articles, setArticles] = useState([])
@@ -12,7 +14,8 @@ const App = () => {
   const getData = async () => {
     try {
       fetchArticles().then((articles) => {
-        setArticles(articles.results)
+        let simplifiedArticles = dataCleaning(articles)
+        setArticles(simplifiedArticles)
       })
     }
     catch(error) {
@@ -24,14 +27,34 @@ const App = () => {
     getData()
   }, [])
 
+  // const articleCards = articles.map(article => {
+  //   return (
+  //     <div className='article-card'>
+  //       <h1 className='title'>{article.title}</h1>
+  //       <h2 className='abstract'>{article.abstract}</h2>
+  //       <p className='author'>{article.byline}</p>
+  //       <a className='image-caption'>{article.multimedia[0].caption}</a>
+  //       <Link to='/details'>
+  //         <button>See Details</button>
+  //       </Link>
+  //     </div>
+  //   )
+  // })
+
   return (
     <div className="App">
       <Route exact path='/'>
         <Home
           articles={articles}
           />
-        </Route>
-
+      </Route>
+      <Route exact path='/:id' render={ ({ match }) => {
+        const selectedID = match.params.id;
+        return <Details
+          selectedID={ selectedID }
+          />
+      }}
+      />
     </div>
   )
 }

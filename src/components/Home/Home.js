@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import { Route, Link } from 'react-router-dom'
 
 const Home = ({ articles })  => {
 
@@ -15,15 +16,20 @@ const Home = ({ articles })  => {
       })
     return imageCards
   }
-
+  console.log(articles)
   const articleCards = articles.map(article => {
+
+    console.log(article)
     return (
-      <div className='article-card'>
+      <div className='article-card' id={article.id}>
         <h1 className='title'>{article.title}</h1>
         <h2 className='abstract'>{article.abstract}</h2>
-        <p className='author'>{article.byline}</p>
-        <img className='article-image' src={article.multimedia[0].url} />
-        <a className='image-caption'>{article.multimedia[0].caption}</a>
+        <p className='author'>{article.author}</p>
+        <img className='article-image' src={article.images[0].url} />
+        <a className='image-caption'>{article.images[0].caption}</a>
+        <Link key={article.id} to={`/${article.id}`}>
+          <button>See Details</button>
+        </Link>
       </div>
     )
   })
@@ -32,6 +38,7 @@ const Home = ({ articles })  => {
     <div>
       <div>Home</div>
       <div className='article-cards'>{articleCards}</div>
+
     </div>
   )
 }
