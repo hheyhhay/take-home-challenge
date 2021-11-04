@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from '../Home/Home';
 import Details from '../Details/Details';
+import Search from '../Search/Search';
 
 const App = () => {
   const [articles, setArticles] = useState([])
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <div className="App">
       <Route exact path='/'>
+        <Search />
         <Home
           articles={articles}
           handleChange={ handleChange }
