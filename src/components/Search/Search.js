@@ -1,10 +1,13 @@
 import React from 'react';
 import './Search.css';
 
-const Search = () => {
+const Search = ({ searchArticle }) => {
+
   return (
     <div className='search-bar'>
-      <input type='text' placeholder='Search...'/>
+      <form id='search-form'>
+        <input type='text' onChange={(e) => {searchArticle(e.target.value)}} placeholder='Search...'/>
+      </form>
     </div>
   )
 }
