@@ -1,0 +1,32 @@
+.details-page {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 2px solid black;
+}
+
+.selected-article {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  background-color: white;
+  width: 40%;
+  height: 40%;
+  border-radius: 5%;
+  padding: 3%;
+  bottom: 0;
+  right: 0;
+  margin-right: 10%;
+  position: absolute;
+}
+
+.background-image {
+  z-index: -1;
+  width: 100%;
+  height: 80%;
+  opacity: .8;
+  position: relative;
+}

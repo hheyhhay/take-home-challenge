@@ -1,8 +1,35 @@
+.header {
+  height: 150px;
+  background-color: blue;
+  color: yellow;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 3%;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
 .article-card {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin: 5%;
+  border-radius: 5%;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  background-color: white;
+  padding: 2%;
+  height: 450px;
 }
 
 .title {
@@ -20,4 +47,27 @@
 
 .image-caption {
   font-size: 10px;
+  font-style: italic;
+}
+
+button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-bottom: 2% 0 2% 0;
+}
+
+button:hover {
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
 }

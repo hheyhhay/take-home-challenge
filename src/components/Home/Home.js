@@ -21,7 +21,6 @@ const Home = ({ articles, handleChange })  => {
     return (
       <div className='article-card' id={article.id}>
         <h1 className='title'>{article.title}</h1>
-        <h2 className='abstract'>{article.abstract}</h2>
         <p className='author'>{article.author}</p>
         <img className='article-image' src={article.images[0].url} />
         <a className='image-caption'>{article.images[0].caption}</a>
@@ -33,10 +32,12 @@ const Home = ({ articles, handleChange })  => {
   })
 
   return (
-    <div>
-      <div>Home</div>
-      <div className='article-cards'>{articleCards}</div>
-    </div>
+    <>
+      <div className='header'>
+        <h1>Your Top News Stories for the Day:</h1>
+      </div>
+      <div className='article-container'>{ articleCards }</div>
+    </>
   )
 }
 
