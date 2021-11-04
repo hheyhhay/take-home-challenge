@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchArticles } from '../../util/apiCall';
 import { dataCleaning } from '../../util/dataCleaning';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Home from '../Home/Home';
 import Details from '../Details/Details';
@@ -39,15 +39,19 @@ const App = () => {
   const searchArticle = (searchWord) => {
     const foundArticle = articles.filter((article) => {
 
-      let lowerCaseTitle = article.title.toLowerCase()
-      let lowerCaseWord = searchWord.toLowerCase()
+      let lowerCaseTitle = article.title.toLowerCase();
+      let lowerCaseWord = searchWord.toLowerCase();
+      let searchedArticle;
+
       if (lowerCaseTitle.includes(lowerCaseWord)) {
-        return article;
+        searchedArticle = article;
       }
+
+      return searchedArticle;
     })
+    
     setFoundArticle(foundArticle)
   }
-
 
   return (
     <div className="App">
